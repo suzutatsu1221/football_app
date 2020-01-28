@@ -1,0 +1,16 @@
+<h1>投稿詳細</h1>
+
+<h2>チーム</h2>
+<p><%= @blog.team %></p>
+
+<h2>内容</h2>
+<p><%= @blog.body %></p>
+
+<h2>画像</h2>
+<%= attachment_image_tag @blog, :image, :fill, 300, 300, format: 'jpeg' %>
+
+<p><%= link_to "編集する", edit_blog_path(@blog.id) %></p>
+
+<p><%= link_to "削除する", destroy_blog_path(@blog.id), method:"delete", "data-confirm" => "本当に削除しますか？" %></p>
+
+<p><%= link_to "新規投稿へ", blogs_path, method:"get" %></p>
